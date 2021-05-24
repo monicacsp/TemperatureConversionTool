@@ -1,0 +1,22 @@
+<h1 id="tableLabel">Convert temperature</h1>
+
+<p></p>
+
+
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="tempType">
+  <thead>
+    <tr>
+      <th>Celsius</th>
+      <th>Fahrenheit</th>
+      <th>Kelvin</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> <app-input-keyup name="celsius" value="{{ tempType.temperatureC }}" (passData)="receiveData($event)"></app-input-keyup> </td>
+      <td> <app-input-keyup name="fahrenheit" value="{{ tempType.temperatureF }}" (passData)="receiveData($event)"></app-input-keyup> </td>
+      <td> <app-input-keyup  name="kelvin" value="{{ tempType.temperatureK }}" (passData)="receiveData($event)"></app-input-keyup> </td>     
+    </tr>
+  </tbody>
+</table>
