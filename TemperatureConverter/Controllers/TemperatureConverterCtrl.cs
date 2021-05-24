@@ -13,7 +13,7 @@ namespace TemperatureConverter.Controllers
     {        
         private readonly ILogger<TemperatureConverterCtrl> _logger;
 
-        public TemperatureConverterCtrl() { }
+
 
         public TemperatureConverterCtrl(ILogger<TemperatureConverterCtrl> logger)
         {

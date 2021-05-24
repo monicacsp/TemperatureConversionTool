@@ -36,3 +36,6 @@ dotnet watch run
 9. The Angular application would be launched.
 
 
+## Known Issues
+
+1. Vulnerable npm packages

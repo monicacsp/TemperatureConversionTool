@@ -3,12 +3,15 @@ using TemperatureConverter.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.Extensions.Logging;
 
 namespace TemperatureConverter.Controllers.Tests
 {
     [TestClass()]
     public class TemperatureConverterCtrlTests
     {
+        private readonly ILogger<TemperatureConverterCtrl> _logger;
+
         [TestMethod()]
         public void ValidateFormulas_fromCelsius()
         {
@@ -17,7 +20,7 @@ namespace TemperatureConverter.Controllers.Tests
             double tempK = tempC + 273.15;
 
 
-            TemperatureConverterCtrl tempTypesCtrl = new TemperatureConverterCtrl();
+            TemperatureConverterCtrl tempTypesCtrl = new TemperatureConverterCtrl(_logger);
             TemperatureTypes tempTypes = new TemperatureTypes();
             tempTypes = tempTypesCtrl.Get("celsius", "0");
 
@@ -33,7 +36,7 @@ namespace TemperatureConverter.Controllers.Tests
             double tempK = tempC + 273.15;
 
 
-            TemperatureConverterCtrl tempTypesCtrl = new TemperatureConverterCtrl();
+            TemperatureConverterCtrl tempTypesCtrl = new TemperatureConverterCtrl(_logger);
             TemperatureTypes tempTypes = new TemperatureTypes();
             tempTypes = tempTypesCtrl.Get("fahrenheit", "0");
 
@@ -49,7 +52,7 @@ namespace TemperatureConverter.Controllers.Tests
             double tempF = (tempC * 9) / 5 + 32;
 
 
-            TemperatureConverterCtrl tempTypesCtrl = new TemperatureConverterCtrl();
+            TemperatureConverterCtrl tempTypesCtrl = new TemperatureConverterCtrl(_logger);
             TemperatureTypes tempTypes = new TemperatureTypes();
             tempTypes = tempTypesCtrl.Get("kelvin", "0");
 
